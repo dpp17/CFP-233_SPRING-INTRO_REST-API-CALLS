@@ -30,4 +30,13 @@ public class Controller {
     public String messageThree(@RequestBody Person person){
         return person.toString();
     }
+
+    //////////////////// ::  UC-5  :: ////////////////////
+    /*Use PUT Request Method and pass first name as
+ Path Variable and last name as Query Parameter*/
+    @PutMapping("/put/{firstName}")
+    public String put(@PathVariable String firstName,
+                      @RequestParam(value = "lastName") String lastName) {
+        return "Hello " + firstName + " " + lastName + "!";
+    }
 }
